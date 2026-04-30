@@ -1,0 +1,12 @@
+{
+  "name": "trustbuild-philly",
+  "version": "1.0.0",
+  "description": "TrustBuild Philadelphia - Verified Contractors",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  }
+}
