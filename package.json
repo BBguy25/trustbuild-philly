@@ -1,0 +1,15 @@
+{
+  "name": "trustbuild-philly",
+  "version": "1.0.0",
+  "description": "TrustBuild Philadelphia - Verified Contractors",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}
