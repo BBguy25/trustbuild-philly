@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TrustBuild Philadelphia | Verified Contractors</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     :root {
       --navy:    #0d1b2a;
@@ -297,15 +298,15 @@
     <a href="#how-it-works">How It Works</a>
     <a href="#categories">Services</a>
     <a href="#for-contractors">Join as Contractor</a>
-    <a href="#submit-project" class="nav-cta">Post a Project</a>
+    <a href="#submit-project" class="nav-cta">Request a Proposal</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">Insurance Verified · Greater Philadelphia Region</div>
-  <h1>The <em>Trusted</em> Network<br>for Every Build</h1>
-  <p class="hero-sub">Homeowners protecting their investment. Business owners managing commercial spaces. GCs building their sub roster. TrustBuild connects everyone with verified, insured contractors in the Philadelphia area.</p>
+  <h1>The <em>Trusted</em> Network<br>for Requesting Skilled Contractors</h1>
+  <p class="hero-sub">Homeowners protecting their investment. Business owners managing commercial spaces. GCs building their sub roster. TrustBuild connects you with insured, vetted trade contractors across the Greater Philadelphia area.</p>
 
   <div class="audience-tabs">
     <button class="aud-tab active" onclick="setAudience(this,'homeowner')">🏠 Homeowners</button>
@@ -317,20 +318,20 @@
     <div class="aud-panel active" id="panel-homeowner">
       <div class="panel-headline">Get the right contractor for your home</div>
       <p class="panel-desc">Post your project once. Describe what you need — from a bathroom remodel to a full addition — and let verified, insured contractors reach out to you.</p>
-      <a href="#submit-project" class="panel-cta">Post My Project →</a>
+      <a href="#submit-project" class="panel-cta">Request a Proposal →</a>
       <a href="#how-it-works" class="panel-cta-ghost">How It Works</a>
       <div class="panel-tags"><span class="panel-tag">Roofing</span><span class="panel-tag">Kitchen Remodel</span><span class="panel-tag">HVAC</span><span class="panel-tag">Landscaping</span><span class="panel-tag">Additions</span><span class="panel-tag">Flooring</span></div>
     </div>
     <div class="aud-panel" id="panel-business">
       <div class="panel-headline">Reliable contractors for your commercial needs</div>
-      <p class="panel-desc">Office fit-outs, parking lots, tenant improvements, commercial HVAC — post your scope and connect with contractors who work at commercial scale, fully insured.</p>
-      <a href="#submit-project" class="panel-cta">Post a Commercial Project →</a>
+      <p class="panel-desc">Office fit-outs, parking lots, tenant improvements, commercial HVAC — request a proposal and connect with contractors who work at commercial scale.</p>
+      <a href="#submit-project" class="panel-cta">Request a Commercial Proposal →</a>
       <a href="#how-it-works" class="panel-cta-ghost">How It Works</a>
       <div class="panel-tags"><span class="panel-tag">Tenant Improvement</span><span class="panel-tag">Paving</span><span class="panel-tag">Commercial HVAC</span><span class="panel-tag">Electrical</span><span class="panel-tag">Build-Out</span></div>
     </div>
     <div class="aud-panel" id="panel-gc">
-      <div class="panel-headline">Find verified subs for your next project</div>
-      <p class="panel-desc">Post a subcontract opportunity with full scope, schedule, crew size, and bonding requirements. Let qualified, insured subs in Philadelphia's market come to you.</p>
+      <div class="panel-headline">Find qualified subs for your next project</div>
+      <p class="panel-desc">Post a subcontract opportunity with full scope, schedule, crew size, and bonding requirements. Let qualified subs in Philadelphia's market come to you.</p>
       <a href="#submit-project" class="panel-cta">Post a Sub Opportunity →</a>
       <a href="#for-contractors" class="panel-cta-ghost">Join as a Contractor</a>
       <div class="panel-tags"><span class="panel-tag">Framing Subs</span><span class="panel-tag">Electrical Subs</span><span class="panel-tag">Plumbing Subs</span><span class="panel-tag">Masonry</span><span class="panel-tag">Drywall</span><span class="panel-tag">Roofing Subs</span></div>
@@ -349,8 +350,8 @@
 
 <!-- TRUST BANNER -->
 <div class="trust-banner">
-  <div class="trust-item"><span class="trust-icon">🛡️</span> Liability Insurance Confirmed</div>
-  <div class="trust-item"><span class="trust-icon">📋</span> Workers' Comp Verified</div>
+  <div class="trust-item"><span class="trust-icon">📄</span> COI Reviewed Prior to Submissions Sent</div>
+  <div class="trust-item"><span class="trust-icon">🔗</span> Typical Response Within 48 Hours</div>
   <div class="trust-item"><span class="trust-icon">📍</span> PA: Philadelphia, Bucks, Montgomery, Delaware &amp; Chester · NJ: Camden, Burlington &amp; Gloucester</div>
   <div class="trust-item"><span class="trust-icon">⚡</span> Contractors Respond Within 48 Hours</div>
 </div>
@@ -366,11 +367,11 @@
     <div class="serve-card homeowner">
       <div class="serve-audience">🏠 Homeowners</div>
       <div class="serve-title">Protect Your Biggest Investment</div>
-      <p class="serve-desc">You shouldn't have to wonder if the person working in your home is insured. Every contractor on TrustBuild is.</p>
+      <p class="serve-desc">Finding a contractor you can trust is hard. TrustBuild connects you with trade contractors who have submitted proof of insurance at enrollment — making it easier to start your search with more confidence.</p>
       <div class="serve-list">
         <div class="serve-list-item">Post your project once, get outreach from multiple qualified contractors</div>
         <div class="serve-list-item">Share as much or as little budget detail as you're comfortable with</div>
-        <div class="serve-list-item">Contractors come to you — no endless searching or cold calls</div>
+        <div class="serve-list-item">Contractors come to you based on your project details</div>
         <div class="serve-list-item">All trades: roofing, landscaping, full renovations, and more</div>
       </div>
       <a href="#submit-project" class="serve-cta-link">Post a Project →</a>
@@ -390,12 +391,12 @@
     <div class="serve-card gc">
       <div class="serve-audience">🔩 General Contractors &amp; Prime Contractors</div>
       <div class="serve-title">Build Your Sub Network in the Philly Market</div>
-      <p class="serve-desc">Finding reliable, insured subs is one of the hardest parts of running a GC operation. TrustBuild gives you a direct pipeline to vetted local subs.</p>
+      <p class="serve-desc">Finding reliable subs is one of the hardest parts of running a GC operation. TrustBuild gives you a direct pipeline to local subs whose COI has been reviewed prior to submissions being sent.</p>
       <div class="serve-list">
         <div class="serve-list-item">Post sub opportunities with full scope, schedule &amp; crew size</div>
         <div class="serve-list-item">Specify bonding, prevailing wage, union or open-shop requirements</div>
         <div class="serve-list-item">Build a recurring sub roster across multiple trade categories</div>
-        <div class="serve-list-item">All subs carry verified liability and workers' comp coverage</div>
+        <div class="serve-list-item">All subs submit a certificate of insurance upon joining the network</div>
       </div>
       <a href="#submit-project" class="serve-cta-link">Post a Sub Opportunity →</a>
     </div>
@@ -429,10 +430,10 @@
   </div>
   <div class="hiw-panel" id="hiw-join">
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">01</div><div class="step-icon">📤</div><div class="step-title">Submit Your Application</div><p class="step-desc">Provide your trade categories, service area, license numbers, and insurance carrier information. Takes about 10 minutes.</p></div>
-      <div class="step-card"><div class="step-num">02</div><div class="step-icon">🛡️</div><div class="step-title">Insurance Verification</div><p class="step-desc">We verify your general liability and workers' comp coverage directly with your carrier. Typical turnaround: 3–5 business days.</p></div>
-      <div class="step-card"><div class="step-num">03</div><div class="step-icon">✅</div><div class="step-title">Get Approved &amp; Listed</div><p class="step-desc">Once verified, you're active in the network and begin receiving leads matched to your trade, license, and service area.</p></div>
-      <div class="step-card"><div class="step-num">04</div><div class="step-icon">📈</div><div class="step-title">Grow Your Pipeline</div><p class="step-desc">Review detailed project posts — residential, commercial, and GC sub opportunities — and reach out to the ones that fit your capacity.</p></div>
+      <div class="step-card"><div class="step-num">01</div><div class="step-icon">📤</div><div class="step-title">Submit Your Application</div><p class="step-desc">Provide your trade categories, service area, license numbers, and contact information. Takes about 10 minutes.</p></div>
+      <div class="step-card"><div class="step-num">02</div><div class="step-icon">📄</div><div class="step-title">Submit Your COI</div><p class="step-desc">Upload a current Certificate of Insurance showing general liability and workers' comp coverage. Your COI is reviewed before any project submissions are sent your way.</p></div>
+      <div class="step-card"><div class="step-num">03</div><div class="step-icon">✅</div><div class="step-title">Get Listed &amp; Start Receiving Leads</div><p class="step-desc">Once your application and COI are on file, you're active in the network and begin receiving project requests that match your trade and service area.</p></div>
+      <div class="step-card"><div class="step-num">04</div><div class="step-icon">📈</div><div class="step-title">Grow Your Pipeline</div><p class="step-desc">Review detailed project requests — residential, commercial, and GC sub opportunities — and reach out to the ones that fit your capacity.</p></div>
     </div>
   </div>
 </section>
@@ -474,12 +475,12 @@
 <section id="submit-project">
   <div class="form-layout">
     <div class="form-intro">
-      <div class="section-label" style="color:var(--gold-lt);">Post Your Project or Opportunity</div>
+      <div class="section-label" style="color:var(--gold-lt);">Request a Proposal</div>
       <div class="section-title">Tell Us What You Need</div>
       <p class="section-body">Whether it's a home renovation, a commercial build-out, or a subcontractor search — describe the work and let the right contractors come to you.</p>
       <div class="form-perks">
-        <div class="form-perk"><div class="perk-check">✓</div><span>Free to post — no fees or subscriptions</span></div>
-        <div class="form-perk"><div class="perk-check">✓</div><span>Only verified, insured contractors see your post</span></div>
+        <div class="form-perk"><div class="perk-check">✓</div><span>Free to submit — no fees or subscriptions</span></div>
+        <div class="form-perk"><div class="perk-check">✓</div><span>COI reviewed prior to submissions being sent to contractors</span></div>
         <div class="form-perk"><div class="perk-check">✓</div><span>Your contact info stays private until you choose to engage</span></div>
         <div class="form-perk"><div class="perk-check">✓</div><span>Typical first response within 48 hours</span></div>
         <div class="form-perk"><div class="perk-check">✓</div><span>Serving 8 counties — PA: Philadelphia, Bucks, Montgomery, Delaware &amp; Chester · NJ: Camden, Burlington &amp; Gloucester</span></div>
@@ -488,7 +489,7 @@
 
     <div class="form-card">
       <div id="project-form">
-        <div class="form-title">Project / Opportunity Form</div>
+        <div class="form-title">Request a Proposal</div>
         <p class="form-subtitle">Fields marked <span style="color:var(--gold)">*</span> are required</p>
 
         <!-- WHO IS POSTING -->
@@ -847,22 +848,42 @@
           <textarea id="notes" rows="3" placeholder="Anything else contractors should know — parking situation, access hours, materials already purchased, HOA restrictions, job site rules, etc."></textarea>
         </div>
 
+        <div class="field-group">
+          <label>Attachments <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(optional — plans, photos, specs)</span></label>
+          <input type="file" id="attachments" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.dwg" style="padding:0.5rem;font-size:0.85rem;cursor:pointer;"/>
+          <p class="field-tip">Accepted: PDF, JPG, PNG, DOC, DOCX, DWG. Max 10MB per file.</p>
+        </div>
+
+        <div style="background:rgba(201,147,58,0.08);border:1px solid rgba(201,147,58,0.25);border-radius:8px;padding:1rem 1.1rem;margin:1.2rem 0;font-size:0.82rem;color:var(--muted);line-height:1.65;">
+          <strong style="color:var(--navy);display:block;margin-bottom:0.4rem;">⚠️ Please Read Before Submitting</strong>
+          TrustBuild Philadelphia is a <strong>connection service only</strong>. We do not employ contractors, guarantee their work, verify ongoing insurance status, or assume any liability for work performed. Contractors in our network have submitted a Certificate of Insurance at the time of enrollment, but we do not independently confirm coverage remains active. Always verify insurance and licenses directly before hiring any contractor.
+        </div>
+
         <div class="field-group" style="margin-top:1.1rem">
           <label class="checkbox-item" style="font-size:0.83rem;text-transform:none;letter-spacing:0;color:var(--text);line-height:1.5;">
             <input type="checkbox" id="agree"/>
-            <span>I agree to be contacted by verified contractors in the TrustBuild network regarding this submission. <span class="req">*</span></span>
+            <span>I understand that TrustBuild is a connection service, does not guarantee contractor work or verify ongoing insurance, and I agree to be contacted by contractors in the TrustBuild network regarding this submission. <span class="req">*</span></span>
           </label>
         </div>
 
-        <button class="submit-btn" id="submit-btn" onclick="submitForm()">Submit My Project →</button>
-        <p class="form-privacy">🔒 Your information is never sold. Shared only with verified, insured contractors.</p>
+        <button class="submit-btn" id="submit-btn" onclick="submitForm()">Request a Proposal →</button>
+        <p class="form-privacy">🔒 Your information is never sold. Shared only with contractors in our network.</p>
       </div>
 
       <div class="success-msg" id="success-msg">
         <div class="success-icon">✓</div>
-        <div class="success-title">Submitted Successfully!</div>
-        <p class="success-body">Your project or opportunity has been received and will be distributed to matching, verified contractors in the Greater Philadelphia area. Expect to hear from interested parties within <strong>48 hours</strong>.</p>
-        <p style="color:var(--muted);font-size:0.83rem;margin-top:1rem;">Check your email for a confirmation. Questions? <strong>hello@trustbuildphilly.com</strong></p>
+        <div class="success-title">Request Received!</div>
+        <p class="success-body">Your proposal request has been sent to <strong>info@trustbuildphiladelphia.com</strong> and you'll receive a confirmation email shortly.</p>
+        <div style="background:var(--cream);border:1px solid var(--smoke);border-radius:10px;padding:1.2rem;margin-top:1.2rem;text-align:left;">
+          <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;">What happens next:</p>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="font-size:0.82rem;color:var(--muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">1.</span><span>We will match your request to contractors in our network whose trade and service area align with your project.</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">2.</span><span>Any contractor who reaches out to you will identify themselves as contacting you through TrustBuild Philadelphia.</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">3.</span><span>We ask that you verify insurance and licenses directly with any contractor before hiring. TrustBuild reviews COIs at enrollment but does not confirm ongoing coverage and is not liable for contractor work.</span></div>
+            <div style="font-size:0.82rem;color:var(--muted);display:flex;gap:0.5rem;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">4.</span><span>Your feedback matters. After your project, please let us know how the contractor performed — it helps us maintain quality in the network.</span></div>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:0.81rem;margin-top:1rem;">Questions? Contact us at <strong>info@trustbuildphiladelphia.com</strong></p>
       </div>
     </div>
   </div>
@@ -877,7 +898,7 @@
       <p class="section-body">Access a steady stream of pre-qualified leads — residential projects, commercial work, and GC sub opportunities — all in the Greater Philadelphia market.</p>
       <div class="benefit-list">
         <div class="benefit-item"><div class="benefit-icon">📋</div><div><div class="benefit-title">Detailed Lead Information</div><p class="benefit-desc">Every post includes scope, budget range, timeline, location, and property type so you only reach out to leads that make real business sense.</p></div></div>
-        <div class="benefit-item"><div class="benefit-icon">🛡️</div><div><div class="benefit-title">Your Insurance is a Selling Point</div><p class="benefit-desc">Homeowners, business owners, and GCs on TrustBuild already know you're insured before they ever speak with you. That trust is built in.</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🛡️</div><div><div class="benefit-title">COI Required at Enrollment</div><p class="benefit-desc">To join the network you must submit a current Certificate of Insurance. TrustBuild reviews what is submitted but does not independently verify coverage with your carrier or assume liability.</p></div></div>
         <div class="benefit-item"><div class="benefit-icon">🎯</div><div><div class="benefit-title">Matched to Your Trade &amp; Area</div><p class="benefit-desc">You only see leads that match your licensed trade categories and service zip codes. No wasted time on jobs outside your wheelhouse.</p></div></div>
         <div class="benefit-item"><div class="benefit-icon">🏗️</div><div><div class="benefit-title">Direct Work &amp; Sub Opportunities</div><p class="benefit-desc">See opportunities direct from homeowners and businesses, plus subcontract postings from GCs — all in one place, all in one market.</p></div></div>
       </div>
@@ -885,13 +906,16 @@
     <div>
       <div class="contractor-cta-block">
         <h3>Apply to Join the TrustBuild Network</h3>
-        <p>Join hundreds of Philadelphia-area contractors already growing their business. Verification is straightforward and typically completes within 3–5 business days.</p>
+        <p>Submit your trade information and a current Certificate of Insurance to get started. Once on file, we'll match incoming project requests to your trades and send them your way.</p>
         <a href="#" class="cta-btn">Start Your Application →</a>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.9rem 1rem;margin-top:1.5rem;font-size:0.78rem;color:rgba(245,240,232,0.5);line-height:1.6;text-align:left;">
+          By joining, you agree to identify yourself as contacting prospects through TrustBuild Philadelphia when reaching out to a match. TrustBuild is not responsible for the accuracy of information submitted by project requesters. We do not guarantee project quality, scope, or payment. We reserve the right to remove contractors from the network if serious complaints are received or a repeated pattern of poor business practices is identified.
+        </div>
         <div class="badge-row">
-          <span class="badge">Liability Verified</span>
-          <span class="badge">Workers' Comp</span>
-          <span class="badge">Licensed Trades</span>
-          <span class="badge">Bonded Options</span>
+          <span class="badge">COI on File</span>
+          <span class="badge">Trade Matched</span>
+          <span class="badge">Local Network</span>
+          <span class="badge">PA &amp; NJ</span>
         </div>
       </div>
     </div>
@@ -941,8 +965,8 @@
       titleLabel: 'Project Title / Summary',
       descLabel: 'Detailed Project Description',
       descTip: 'Tip: Include square footage, rooms/floors, material preferences, and any known challenges (e.g., older home, limited access).',
-      bidsLabel: 'Number of Quotes Desired',
-      submitBtn: 'Submit My Project →',
+      bidsLabel: 'Number of Proposals Desired',
+      submitBtn: 'Request a Proposal →',
       titlePlaceholder: 'e.g., Full kitchen gut renovation — 1,900 sq ft rancher'
     },
     business: {
@@ -951,8 +975,8 @@
       titleLabel: 'Project Title / Brief Summary',
       descLabel: 'Detailed Scope of Work',
       descTip: 'Tip: Include square footage, # of units or floors, material preferences, access schedule, and any code or building management considerations.',
-      bidsLabel: 'Number of Quotes Desired',
-      submitBtn: 'Submit My Commercial Project →',
+      bidsLabel: 'Number of Proposals Desired',
+      submitBtn: 'Request a Commercial Proposal →',
       titlePlaceholder: 'e.g., 3,500 sq ft office build-out — open floor plan, 2nd floor, Center City'
     },
     gc: {
@@ -988,8 +1012,9 @@
     document.getElementById('proj-title').placeholder = l.titlePlaceholder;
   }
 
-  // Submission
-  function submitForm() {
+  // Submission — sends to info@trustbuildphiladelphia.com via Formspree
+  // and triggers auto-reply emails via EmailJS
+  async function submitForm() {
     const required = ['fname','lname','email','address','city','county','zip','category','proj-title','description','property-type','start-date'];
     if (currentType !== 'homeowner') required.push('company');
     let valid = true;
@@ -1001,6 +1026,75 @@
     if (!document.getElementById('agree').checked) valid = false;
     if (!valid) { alert('Please fill in all required fields and accept the terms before submitting.'); return; }
 
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const submitterEmail = document.getElementById('email').value.trim();
+    const submitterName  = document.getElementById('fname').value.trim() + ' ' + document.getElementById('lname').value.trim();
+    const isGC = currentType === 'gc';
+
+    // ── 1. Send form data to info@trustbuildphiladelphia.com via Formspree ──
+    const formData = new FormData();
+    formData.append('_replyto', submitterEmail);
+    formData.append('poster_type', currentType);
+    formData.append('name', submitterName);
+    formData.append('email', submitterEmail);
+    formData.append('phone', document.getElementById('phone').value);
+    formData.append('company', document.getElementById('company')?.value || '');
+    formData.append('address', document.getElementById('address').value);
+    formData.append('city', document.getElementById('city').value);
+    formData.append('county', document.getElementById('county').value);
+    formData.append('zip', document.getElementById('zip').value);
+    formData.append('category', document.getElementById('category').value);
+    formData.append('project_title', document.getElementById('proj-title').value);
+    formData.append('description', document.getElementById('description').value);
+    formData.append('property_type', document.getElementById('property-type').value);
+    formData.append('start_date', document.getElementById('start-date').value);
+    formData.append('budget', document.getElementById('budget').value);
+    formData.append('notes', document.getElementById('notes').value);
+    formData.append('priority_cost', priorities.cost);
+    formData.append('priority_quality', priorities.quality);
+    formData.append('priority_speed', priorities.speed);
+
+    const files = document.getElementById('attachments').files;
+    for (let i = 0; i < files.length; i++) { formData.append('attachment_' + i, files[i]); }
+
+    let formspreeOk = false;
+    try {
+      // ⬇ Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
+      const res = await fetch('https://formspree.io/f/xvzlovdk', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+      formspreeOk = res.ok;
+    } catch(e) { console.error('Formspree error:', e); }
+
+    // ── 2. Send auto-reply to submitter via EmailJS ──
+    // ⬇ Replace YOUR_EMAILJS_SERVICE_ID, YOUR_EMAILJS_TEMPLATE_SUBMITTER_ID, YOUR_EMAILJS_PUBLIC_KEY
+    const isContractorForm = isGC;
+    const submitterMsg = isContractorForm
+      ? `Thank you for joining the TrustBuild Philadelphia network. Here's what you should know:\n\n` +
+        `• We will match incoming project requests to your trade categories and service area and send them to you when there's a fit.\n` +
+        `• TrustBuild is not responsible for the accuracy of information submitted by project requesters. Always do your own due diligence before committing to a job.\n` +
+        `• When reaching out to any match, please let the prospect know you are contacting them through TrustBuild Philadelphia.\n` +
+        `• We do not guarantee project quality, scope, or payment. We are a connection service only.\n` +
+        `• TrustBuild reserves the right to stop sending submissions to contractors if serious complaints are received or a repeated pattern of poor business practices is identified.\n\n` +
+        `We're glad to have you in the network. Questions? Email info@trustbuildphiladelphia.com`
+      : `Thank you for submitting your proposal request to TrustBuild Philadelphia. Here's what to expect:\n\n` +
+        `1. INSURANCE & LICENSES: Contractors in our network have submitted a Certificate of Insurance at enrollment. However, TrustBuild does not independently verify that coverage remains active and is not liable for contractor work. We strongly encourage you to verify insurance and licenses directly with any contractor before hiring.\n\n` +
+        `2. CONNECTION SERVICE: TrustBuild connects you with contractors — we do not employ them, supervise their work, or make any guarantees about the quality or outcome of any project.\n\n` +
+        `3. CONTRACTOR IDENTIFICATION: Any contractor who reaches out to you as a result of your submission will let you know they are contacting you through TrustBuild Philadelphia.\n\n` +
+        `4. YOUR FEEDBACK MATTERS: After your project is complete, we'd love to hear how it went. Your feedback helps us maintain the quality of our network. Please reply to this email or contact us at info@trustbuildphiladelphia.com.\n\n` +
+        `Thank you for trusting TrustBuild Philadelphia.\ninfo@trustbuildphiladelphia.com`;
+
+    try {
+      await emailjs.send('service_i1t9l3l', 'template_w8fktmi', {
+        to_name:  submitterName,
+        to_email: submitterEmail,
+        message:  submitterMsg,
+        subject:  isContractorForm ? 'Welcome to TrustBuild Philadelphia' : 'Your Proposal Request — TrustBuild Philadelphia'
+      }, 'cOulELpWZqNxQ8kHy');
+    } catch(e) { console.error('EmailJS error:', e); }
+
+    // ── 3. Show success state ──
     document.getElementById('project-form').style.display = 'none';
     const msg = document.getElementById('success-msg');
     msg.style.display = 'block';
