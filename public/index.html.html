@@ -1143,12 +1143,14 @@
     const files = document.getElementById('attachments').files;
     for (let i = 0; i < files.length; i++) { formData.append('attachment_' + i, files[i]); }
 
-    let formspreeOk = false;
+    let web3ok = false;
     try {
-      // ⬇ Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
-      const res = await fetch('https://formspree.io/f/xvzlovdk', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
-      formspreeOk = res.ok;
-    } catch(e) { console.error('Formspree error:', e); }
+      formData.append('access_key', '277f9b40-6d11-4701-82bb-bdafe63382b5');
+      formData.append('subject', 'New TrustBuild Proposal Request — ' + document.getElementById('proj-title').value);
+      formData.append('from_name', 'TrustBuild Philadelphia');
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+      web3ok = res.ok;
+    } catch(e) { console.error('Web3Forms error:', e); }
 
     // ── 2. Send auto-reply to submitter via EmailJS ──
     // ⬇ Replace YOUR_EMAILJS_SERVICE_ID, YOUR_EMAILJS_TEMPLATE_SUBMITTER_ID, YOUR_EMAILJS_PUBLIC_KEY
