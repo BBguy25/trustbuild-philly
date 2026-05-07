@@ -4,41 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TrustBuild Philadelphia | Verified Contractors</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     :root {
-      --navy:    #0d1b2a;
-      --steel:   #1b3a57;
-      --gold:    #c9933a;
-      --gold-lt: #e8b86d;
-      --cream:   #f5f0e8;
-      --off-white:#faf8f4;
-      --smoke:   #e2dcd2;
-      --text:    #1a1612;
-      --muted:   #6b6258;
-      --green:   #2d6a4f;
-      --green-lt:#52b788;
-      --blue:    #4a90d9;
+      --navy:     #1a1008;
+      --steel:    #2c1f0e;
+      --gold:     #c47c2b;
+      --gold-lt:  #e0a44e;
+      --cream:    #f7f0e3;
+      --off-white:#fdf8f0;
+      --smoke:    #e8dece;
+      --text:     #1a1008;
+      --muted:    #7a6a55;
+      --green:    #3a5e3a;
+      --green-lt: #6aab6a;
+      --blue:     #4a6fa5;
+      --brick:    #8b3a2a;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; }
+    body { font-family: 'Outfit', sans-serif; background: var(--off-white); color: var(--text); overflow-x: hidden; }
 
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 3rem;
-      background: rgba(13,27,42,0.96); backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,147,58,0.22);
+      padding: 1rem 3rem;
+      background: var(--navy);
+      border-bottom: 3px solid var(--gold);
     }
-    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--cream); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--cream); letter-spacing: 0.04em; }
     .nav-logo span { color: var(--gold); }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: rgba(245,240,232,0.7); text-decoration: none; font-size: 0.87rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { color: rgba(247,240,227,0.7); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold-lt); }
-    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.55rem 1.3rem; border-radius: 4px; font-weight: 600 !important; }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1.2rem; border-radius: 2px; font-weight: 600 !important; letter-spacing: 0.06em; border: 2px solid var(--gold-lt); }
     .nav-cta:hover { background: var(--gold-lt) !important; }
 
     /* HERO */
@@ -49,18 +50,23 @@
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 65% 55% at 82% 50%, rgba(27,58,87,0.55) 0%, transparent 70%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9933a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      background:
+        radial-gradient(ellipse 60% 50% at 85% 50%, rgba(196,124,43,0.1) 0%, transparent 65%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c47c2b' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E");
       pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--brick), var(--gold), var(--brick));
     }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      background: rgba(201,147,58,0.12); border: 1px solid rgba(201,147,58,0.3);
-      color: var(--gold-lt); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.45rem 1rem; border-radius: 50px; width: fit-content; margin-bottom: 1.8rem;
+      background: transparent; border: 1.5px solid var(--gold);
+      color: var(--gold-lt); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 2px; width: fit-content; margin-bottom: 1.8rem;
       animation: fadeUp 0.7s ease both;
     }
-    .hero-eyebrow::before { content: '✓'; background: var(--green); color: #fff; width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 0.65rem; }
+    .hero-eyebrow::before { content: '✦'; color: var(--gold); font-size: 0.6rem; }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 900; line-height: 1.08;
@@ -107,25 +113,25 @@
     .scroll-line { width: 1px; height: 38px; background: linear-gradient(to bottom, rgba(245,240,232,0.3), transparent); animation: scrollPulse 2s ease-in-out infinite; }
 
     /* TRUST BANNER */
-    .trust-banner { background: var(--steel); padding: 1.3rem 3rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; border-bottom: 1px solid rgba(201,147,58,0.2); }
-    .trust-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(245,240,232,0.75); font-size: 0.84rem; font-weight: 500; }
-    .trust-icon { color: var(--gold-lt); font-size: 1.05rem; }
+    .trust-banner { background: var(--steel); padding: 1.1rem 3rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; border-bottom: 2px solid var(--gold); border-top: 1px solid rgba(196,124,43,0.3); }
+    .trust-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(247,240,227,0.8); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; }
+    .trust-icon { color: var(--gold-lt); font-size: 1rem; }
 
     /* SECTIONS */
     section { padding: 6rem 3rem; }
-    .section-label { display: inline-block; color: var(--gold); font-size: 0.73rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .section-label { display: inline-block; color: var(--brick); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.8rem; border-bottom: 1px solid var(--brick); padding-bottom: 0.2rem; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 2.8vw, 2.7rem); font-weight: 700; line-height: 1.2; color: var(--navy); max-width: 580px; }
     .section-body { color: var(--muted); font-size: 1rem; line-height: 1.75; max-width: 520px; margin-top: 0.9rem; }
 
     /* WHO WE SERVE */
     #who-we-serve { background: var(--cream); }
     .serve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 3.5rem; }
-    .serve-card { background: var(--off-white); border: 1px solid var(--smoke); border-radius: 14px; padding: 2.2rem 1.8rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-    .serve-card:hover { transform: translateY(-5px); box-shadow: 0 14px 50px rgba(13,27,42,0.1); }
-    .serve-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 14px 14px 0 0; }
-    .serve-card.homeowner::before { background: linear-gradient(90deg, var(--blue), #6eb5f5); }
-    .serve-card.business::before  { background: linear-gradient(90deg, var(--gold), var(--gold-lt)); }
-    .serve-card.gc::before        { background: linear-gradient(90deg, var(--green), var(--green-lt)); }
+    .serve-card { background: var(--off-white); border: 1px solid var(--smoke); border-top: 4px solid var(--gold); border-radius: 2px; padding: 2.2rem 1.8rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .serve-card:hover { transform: translateY(-5px); box-shadow: 0 14px 50px rgba(26,16,8,0.1); }
+    .serve-card::before { display: none; }
+    .serve-card.homeowner { border-top-color: var(--blue); }
+    .serve-card.business  { border-top-color: var(--gold); }
+    .serve-card.gc        { border-top-color: var(--brick); }
     .serve-audience { font-size: 0.71rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
     .serve-card.homeowner .serve-audience { color: var(--blue); }
     .serve-card.business  .serve-audience { color: var(--gold); }
@@ -150,9 +156,9 @@
     .hiw-panel { display: none; }
     .hiw-panel.active { display: block; }
     .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.7rem; margin-top: 2.5rem; }
-    .step-card { background: var(--cream); border: 1px solid var(--smoke); border-radius: 12px; padding: 2rem 1.7rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,27,42,0.09); }
-    .step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); }
+    .step-card { background: var(--cream); border: 1px solid var(--smoke); border-left: 4px solid var(--gold); border-radius: 2px; padding: 2rem 1.7rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,16,8,0.1); }
+    .step-card::before { display: none; }
     .step-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: rgba(13,27,42,0.05); line-height: 1; margin-bottom: 0.8rem; }
     .step-icon { font-size: 1.5rem; margin-bottom: 0.65rem; }
     .step-title { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
@@ -161,8 +167,8 @@
     /* CATEGORIES */
     #categories { background: var(--cream); }
     .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 0.85rem; margin-top: 3rem; }
-    .cat-pill { display: flex; align-items: center; gap: 0.65rem; background: var(--off-white); border: 1.5px solid var(--smoke); border-radius: 10px; padding: 0.85rem 1.1rem; cursor: pointer; transition: all 0.2s; font-size: 0.87rem; font-weight: 500; color: var(--steel); }
-    .cat-pill:hover { border-color: var(--gold); background: rgba(201,147,58,0.06); color: var(--navy); transform: translateY(-2px); }
+    .cat-pill { display: flex; align-items: center; gap: 0.65rem; background: var(--off-white); border: 1px solid var(--smoke); border-radius: 2px; padding: 0.85rem 1.1rem; cursor: pointer; transition: all 0.2s; font-size: 0.87rem; font-weight: 500; color: var(--steel); }
+    .cat-pill:hover { border-color: var(--gold); background: rgba(196,124,43,0.06); color: var(--navy); transform: translateY(-2px); }
     .cat-pill .cat-icon { font-size: 1.2rem; }
 
     /* FORM */
@@ -176,7 +182,7 @@
     .perk-check { width: 22px; height: 22px; border-radius: 50%; background: rgba(45,106,79,0.25); border: 1.5px solid var(--green-lt); color: var(--green-lt); display: grid; place-items: center; font-size: 0.7rem; flex-shrink: 0; margin-top: 1px; }
 
     /* FORM CARD */
-    .form-card { background: var(--off-white); border-radius: 16px; padding: 2.4rem; box-shadow: 0 24px 80px rgba(0,0,0,0.35); }
+    .form-card { background: var(--off-white); border-radius: 2px; border: 1px solid var(--smoke); border-top: 4px solid var(--gold); padding: 2.4rem; box-shadow: 0 24px 80px rgba(26,16,8,0.2); }
     .form-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
     .form-subtitle { font-size: 0.84rem; color: var(--muted); margin-bottom: 1.6rem; }
 
@@ -215,9 +221,9 @@
     .section-heading { font-family: 'Playfair Display', serif; font-size: 0.98rem; font-weight: 700; color: var(--navy); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
     .form-block { display: block; }
     .form-block.hidden { display: none; }
-    .submit-btn { width: 100%; padding: 1rem; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; border: none; border-radius: 8px; cursor: pointer; margin-top: 1.4rem; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(201,147,58,0.3); }
-    .submit-btn:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,147,58,0.4); }
-    .submit-btn:active { transform: translateY(0); }
+    .submit-btn { width: 100%; padding: 1rem; background: var(--gold); color: var(--navy); font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: 2px solid var(--gold-lt); border-radius: 2px; cursor: pointer; margin-top: 1.4rem; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 4px 4px 0 var(--navy); }
+    .submit-btn:hover { background: var(--gold-lt); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--navy); }
+    .submit-btn:active { transform: translate(0,0); box-shadow: 2px 2px 0 var(--navy); }
     .form-privacy { text-align: center; font-size: 0.74rem; color: var(--muted); margin-top: 0.75rem; }
 
     /* SUCCESS */
@@ -234,11 +240,11 @@
     .benefit-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(13,27,42,0.07); display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0; }
     .benefit-title { font-weight: 600; color: var(--navy); font-size: 0.94rem; }
     .benefit-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.6; margin-top: 0.15rem; }
-    .contractor-cta-block { background: var(--navy); border-radius: 16px; padding: 2.8rem; text-align: center; }
+    .contractor-cta-block { background: var(--navy); border-radius: 2px; border: 1px solid rgba(196,124,43,0.3); border-top: 4px solid var(--gold); padding: 2.8rem; text-align: center; }
     .contractor-cta-block h3 { font-family: 'Playfair Display', serif; font-size: 1.65rem; color: var(--cream); margin-bottom: 1rem; }
     .contractor-cta-block p { color: rgba(245,240,232,0.6); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.8rem; }
-    .cta-btn { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 0.94rem; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .cta-btn:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .cta-btn { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 2px; border: 2px solid var(--gold-lt); text-decoration: none; transition: all 0.2s; box-shadow: 4px 4px 0 rgba(0,0,0,0.3); }
+    .cta-btn:hover { background: var(--gold-lt); transform: translate(-2px,-2px); box-shadow: 6px 6px 0 rgba(0,0,0,0.3); }
     .badge-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.8rem; }
     .badge { background: rgba(201,147,58,0.12); border: 1px solid rgba(201,147,58,0.25); color: var(--gold-lt); font-size: 0.76rem; font-weight: 600; padding: 0.33rem 0.85rem; border-radius: 50px; letter-spacing: 0.05em; }
 
@@ -270,7 +276,47 @@
     .priority-remaining { text-align: right; font-size: 0.78rem; color: var(--muted); padding-top: 0.2rem; }
     .priority-remaining strong { color: var(--navy); }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    .nav-contractor { border: 1.5px solid rgba(201,147,58,0.5) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.1rem; border-radius: 4px; transition: all 0.2s !important; }
+    .nav-contractor:hover { border-color: var(--gold-lt) !important; color: var(--cream) !important; }
+
+    /* CONTRACTOR MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(13,27,42,0.85); backdrop-filter: blur(6px);
+      overflow-y: auto; padding: 2rem 1rem;
+    }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-box {
+      background: var(--off-white); border-radius: 2px;
+      border-top: 4px solid var(--gold);
+      width: 100%; max-width: 680px;
+      box-shadow: 0 32px 100px rgba(26,16,8,0.5);
+      position: relative; margin: auto;
+      animation: fadeUp 0.35s ease;
+    }
+    .modal-header {
+      background: var(--navy); border-radius: 0;
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    .modal-header-label { color: var(--gold-lt); font-size: 0.73rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .modal-header h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--cream); }
+    .modal-header p { color: rgba(245,240,232,0.6); font-size: 0.88rem; margin-top: 0.4rem; line-height: 1.6; }
+    .modal-close {
+      position: absolute; top: 1.2rem; right: 1.5rem;
+      background: rgba(255,255,255,0.1); border: none; color: var(--cream);
+      width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+      font-size: 1.1rem; display: grid; place-items: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.2); }
+    .modal-body { padding: 2rem 2.5rem 2.5rem; }
+    .modal-success { display: none; text-align: center; padding: 2.5rem 1.5rem; }
+
+    @media (max-width: 600px) {
+      .modal-header { padding: 1.5rem 1.2rem 1.2rem; }
+      .modal-body { padding: 1.5rem 1.2rem 2rem; }
+    }
     @keyframes fadeIn { from{opacity:0} to{opacity:1} }
     @keyframes scrollPulse { 0%,100%{opacity:.3;transform:scaleY(1)} 50%{opacity:.65;transform:scaleY(1.15)} }
 
@@ -381,7 +427,7 @@
     <a href="#who-we-serve">Who We Serve</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#categories">Services</a>
-    <a href="#for-contractors">Join as Contractor</a>
+    <a href="#" onclick="openContractorModal();return false;" class="nav-contractor">Join as Contractor</a>
     <a href="#submit-project" class="nav-cta">Request a Proposal</a>
   </div>
 </nav>
@@ -401,35 +447,29 @@
   <div class="audience-panels">
     <div class="aud-panel active" id="panel-homeowner">
       <div class="panel-headline">Get the right contractor for your home</div>
-      <p class="panel-desc">Post your project once. Describe what you need — from a bathroom remodel to a full addition — and let verified, insured contractors reach out to you.</p>
+      <p class="panel-desc">Describe what you need — from a bathroom remodel to a full addition — and let qualified contractors reach out to you.</p>
       <a href="#submit-project" class="panel-cta">Request a Proposal →</a>
       <a href="#how-it-works" class="panel-cta-ghost">How It Works</a>
-      <div class="panel-tags"><span class="panel-tag">Roofing</span><span class="panel-tag">Kitchen Remodel</span><span class="panel-tag">HVAC</span><span class="panel-tag">Landscaping</span><span class="panel-tag">Additions</span><span class="panel-tag">Flooring</span></div>
     </div>
     <div class="aud-panel" id="panel-business">
       <div class="panel-headline">Reliable contractors for your commercial needs</div>
       <p class="panel-desc">Office fit-outs, parking lots, tenant improvements, commercial HVAC — request a proposal and connect with contractors who work at commercial scale.</p>
       <a href="#submit-project" class="panel-cta">Request a Commercial Proposal →</a>
       <a href="#how-it-works" class="panel-cta-ghost">How It Works</a>
-      <div class="panel-tags"><span class="panel-tag">Tenant Improvement</span><span class="panel-tag">Paving</span><span class="panel-tag">Commercial HVAC</span><span class="panel-tag">Electrical</span><span class="panel-tag">Build-Out</span></div>
     </div>
     <div class="aud-panel" id="panel-gc">
       <div class="panel-headline">Find qualified subs for your next project</div>
       <p class="panel-desc">Post a subcontract opportunity with full scope, schedule, crew size, and bonding requirements. Let qualified subs in Philadelphia's market come to you.</p>
       <a href="#submit-project" class="panel-cta">Post a Sub Opportunity →</a>
-      <a href="#for-contractors" class="panel-cta-ghost">Join as a Contractor</a>
-      <div class="panel-tags"><span class="panel-tag">Framing Subs</span><span class="panel-tag">Electrical Subs</span><span class="panel-tag">Plumbing Subs</span><span class="panel-tag">Masonry</span><span class="panel-tag">Drywall</span><span class="panel-tag">Roofing Subs</span></div>
+      <a href="#" onclick="openContractorModal();return false;" class="panel-cta-ghost">Join as a Contractor</a>
     </div>
   </div>
 
   <div class="hero-stats">
-    <div class="stat-item"><span class="stat-num">400+</span><span class="stat-label">Verified Contractors</span></div>
-    <div class="stat-divider"></div>
     <div class="stat-item"><span class="stat-num">30+</span><span class="stat-label">Trade Categories</span></div>
     <div class="stat-divider"></div>
     <div class="stat-item"><span class="stat-num">8 Counties</span><span class="stat-label">PA &amp; NJ Coverage</span></div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div>Scroll to explore</div>
 </section>
 
 <!-- TRUST BANNER -->
@@ -990,7 +1030,7 @@
       <div class="contractor-cta-block">
         <h3>Apply to Join the TrustBuild Network</h3>
         <p>Submit your trade information and a current Certificate of Insurance to get started. Once on file, we'll match incoming project requests to your trades and send them your way.</p>
-        <a href="#" class="cta-btn">Start Your Application →</a>
+        <a href="#" onclick="openContractorModal();return false;" class="cta-btn">Start Your Application →</a>
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.9rem 1rem;margin-top:1.5rem;font-size:0.78rem;color:rgba(245,240,232,0.5);line-height:1.6;text-align:left;">
           By joining, you agree to identify yourself as contacting prospects through TrustBuild Philadelphia when reaching out to a match. TrustBuild is not responsible for the accuracy of information submitted by project requesters. We do not guarantee project quality, scope, or payment. We reserve the right to remove contractors from the network if serious complaints are received or a repeated pattern of poor business practices is identified.
         </div>
@@ -1139,6 +1179,10 @@
     formData.append('priority_cost', priorities.cost);
     formData.append('priority_quality', priorities.quality);
     formData.append('priority_speed', priorities.speed);
+    formData.append('project_size', document.getElementById('size').value);
+    formData.append('estimated_duration', document.getElementById('duration').value);
+    formData.append('budget_range', document.getElementById('budget').value);
+    formData.append('quotes_desired', document.getElementById('bids').value);
 
     const files = document.getElementById('attachments').files;
     for (let i = 0; i < files.length; i++) { formData.append('attachment_' + i, files[i]); }
@@ -1167,7 +1211,7 @@
         `1. INSURANCE & LICENSES: Contractors in our network have submitted a Certificate of Insurance at enrollment. However, TrustBuild does not independently verify that coverage remains active and is not liable for contractor work. We strongly encourage you to verify insurance and licenses directly with any contractor before hiring.\n\n` +
         `2. CONNECTION SERVICE: TrustBuild connects you with contractors — we do not employ them, supervise their work, or make any guarantees about the quality or outcome of any project.\n\n` +
         `3. CONTRACTOR IDENTIFICATION: Any contractor who reaches out to you as a result of your submission will let you know they are contacting you through TrustBuild Philadelphia.\n\n` +
-        `4. YOUR FEEDBACK MATTERS: After your project is complete, we'd love to hear how it went. Your feedback helps us maintain the quality of our network. Please reply to this email or contact us at info@trustbuildphiladelphia.com.\n\n` +
+        `4. YOUR FEEDBACK MATTERS: We'd love to hear how things went — even if you ended up going with a contractor outside our network. Your feedback helps us improve our service and the quality of contractors we work with. Please reply to this email or reach us at info@trustbuildphiladelphia.com.\n\n` +
         `Thank you for trusting TrustBuild Philadelphia.\ninfo@trustbuildphiladelphia.com`;
 
     try {
@@ -1245,6 +1289,268 @@
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
   });
+<!-- CONTRACTOR APPLICATION MODAL -->
+<div class="modal-overlay" id="contractor-modal" onclick="handleModalClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeContractorModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-header-label">🔩 Join the Network</div>
+      <h2>Contractor Application</h2>
+      <p>Fill out the form below to apply to the TrustBuild Philadelphia network. Once reviewed, we'll be in touch to confirm your listing and begin sending matching project requests your way.</p>
+    </div>
+    <div class="modal-body">
+      <div id="contractor-form">
+
+        <!-- CONTACT -->
+        <div class="section-heading">👤 Contact Information</div>
+        <div class="field-row">
+          <div class="field-group"><label>First Name <span class="req">*</span></label><input type="text" id="c-fname" placeholder="John"/></div>
+          <div class="field-group"><label>Last Name <span class="req">*</span></label><input type="text" id="c-lname" placeholder="Smith"/></div>
+        </div>
+        <div class="field-group"><label>Company Name <span class="req">*</span></label><input type="text" id="c-company" placeholder="Smith Contracting LLC"/></div>
+        <div class="field-row">
+          <div class="field-group"><label>Email <span class="req">*</span></label><input type="email" id="c-email" placeholder="john@smithcontracting.com"/></div>
+          <div class="field-group"><label>Phone <span class="req">*</span></label><input type="tel" id="c-phone" placeholder="(215) 555-0100"/></div>
+        </div>
+        <div class="field-group"><label>Business Address</label><input type="text" id="c-address" placeholder="123 Main St, Philadelphia, PA 19103"/></div>
+        <div class="field-group">
+          <label>Years in Business <span class="req">*</span></label>
+          <select id="c-years">
+            <option value="">Select…</option>
+            <option>Less than 1 year</option>
+            <option>1–3 years</option>
+            <option>3–5 years</option>
+            <option>5–10 years</option>
+            <option>10–20 years</option>
+            <option>20+ years</option>
+          </select>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- SERVICE AREA -->
+        <div class="section-heading">📍 Service Area</div>
+        <div class="field-group">
+          <label>Counties Served (check all that apply) <span class="req">*</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Philadelphia County, PA</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Bucks County, PA</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Montgomery County, PA</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Delaware County, PA</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Chester County, PA</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Camden County, NJ</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Burlington County, NJ</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-county"/><span>Gloucester County, NJ</span></label>
+          </div>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- TRADE CATEGORIES -->
+        <div class="section-heading">🔨 Trade Categories</div>
+        <div class="field-group">
+          <label>Select all trades that apply <span class="req">*</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>General Construction / Addition</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Carpentry &amp; Framing</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Roofing</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Masonry &amp; Concrete</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Electrical</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Plumbing</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>HVAC</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Landscaping / Design</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Lawn Care &amp; Maintenance</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Paving &amp; Asphalt</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Painting (Interior / Exterior)</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Flooring</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Kitchen Remodeling</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Bathroom Remodeling</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Decks, Patios &amp; Porches</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Windows &amp; Doors</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Drywall &amp; Plastering</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Siding &amp; Cladding</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Waterproofing &amp; Foundation</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Steel &amp; Metal Fabrication</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Demolition</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Tree Service</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Commercial Build-Out</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Handyman Services</span></label>
+            <label class="checkbox-item"><input type="checkbox" class="c-trade"/><span>Other (describe below)</span></label>
+          </div>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- LICENSES & INSURANCE -->
+        <div class="section-heading">📄 Licenses &amp; Insurance</div>
+        <div class="field-row">
+          <div class="field-group"><label>PA Contractor License #</label><input type="text" id="c-pa-license" placeholder="PA-123456"/></div>
+          <div class="field-group"><label>NJ Contractor License #</label><input type="text" id="c-nj-license" placeholder="NJ-123456"/></div>
+        </div>
+        <div class="field-group"><label>Other License / Certification</label><input type="text" id="c-other-license" placeholder="e.g., Electrical License, HVAC Cert"/></div>
+        <div class="field-group"><label>Insurance Carrier Name <span class="req">*</span></label><input type="text" id="c-insurer" placeholder="e.g., Nationwide, Travelers"/></div>
+        <div class="field-row">
+          <div class="field-group"><label>Policy Number</label><input type="text" id="c-policy" placeholder="POL-123456"/></div>
+          <div class="field-group"><label>COI Expiration Date <span class="req">*</span></label><input type="text" id="c-exp" placeholder="MM/YYYY"/></div>
+        </div>
+
+        <div style="background:rgba(201,147,58,0.08);border:1px solid rgba(201,147,58,0.25);border-radius:8px;padding:1rem 1.1rem;margin:0.5rem 0 1rem;font-size:0.82rem;color:var(--muted);line-height:1.65;">
+          <strong style="color:var(--navy);display:block;margin-bottom:0.4rem;">📎 COI Submission Required</strong>
+          After submitting this form you will receive an email with instructions. Please email your current Certificate of Insurance directly to <strong>info@trustbuildphiladelphia.com</strong> with subject line <strong>"COI — [Your Company Name]"</strong>. Your application will not be activated until your COI is received and reviewed.
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- ABOUT -->
+        <div class="section-heading">📝 About Your Business</div>
+        <div class="field-group">
+          <label>Brief Description of Your Work <span class="req">*</span></label>
+          <textarea id="c-desc" rows="4" placeholder="Describe your company, the type of work you specialize in, typical project size, and anything that sets you apart from other contractors."></textarea>
+        </div>
+        <div class="field-group">
+          <label>Approximate Number of Active Crew Members</label>
+          <select id="c-crew">
+            <option value="">Select…</option>
+            <option>Solo operator</option>
+            <option>2–5</option>
+            <option>6–10</option>
+            <option>11–25</option>
+            <option>25+</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Website or Portfolio Link</label>
+          <input type="text" id="c-website" placeholder="https://yourwebsite.com"/>
+        </div>
+
+        <div style="background:rgba(13,27,42,0.05);border:1px solid var(--smoke);border-radius:8px;padding:1rem 1.1rem;margin:1.2rem 0;font-size:0.81rem;color:var(--muted);line-height:1.65;">
+          <strong style="color:var(--navy);display:block;margin-bottom:0.4rem;">⚠️ Network Agreement</strong>
+          By submitting this application you agree to: (1) identify yourself as contacting prospects through TrustBuild Philadelphia when reaching out to any match; (2) acknowledge that TrustBuild is not responsible for the accuracy of information submitted by project requesters; (3) understand that TrustBuild does not guarantee project quality, scope, or payment; (4) accept that TrustBuild reserves the right to remove contractors from the network if serious complaints are received or a repeated pattern of poor business practices is identified.
+        </div>
+
+        <div class="field-group">
+          <label class="checkbox-item" style="font-size:0.83rem;text-transform:none;letter-spacing:0;color:var(--text);line-height:1.5;">
+            <input type="checkbox" id="c-agree"/>
+            <span>I have read and agree to the TrustBuild Philadelphia network terms above. <span class="req">*</span></span>
+          </label>
+        </div>
+
+        <button class="submit-btn" onclick="submitContractorForm()" id="c-submit-btn">Submit Application →</button>
+        <p class="form-privacy">🔒 Your information is never sold or shared outside the TrustBuild network.</p>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="modal-success" id="contractor-success">
+        <div class="success-icon">✓</div>
+        <div class="success-title">Application Received!</div>
+        <p class="success-body">Thank you for applying to the TrustBuild Philadelphia network. You'll receive a confirmation email shortly with next steps.</p>
+        <div style="background:var(--cream);border:1px solid var(--smoke);border-radius:10px;padding:1.2rem;margin-top:1.2rem;text-align:left;">
+          <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;">Important next step:</p>
+          <p style="font-size:0.83rem;color:var(--muted);line-height:1.65;">Please email your current <strong>Certificate of Insurance</strong> to <strong>info@trustbuildphiladelphia.com</strong> with the subject line <strong>"COI — [Your Company Name]"</strong>. Your application will not be activated until your COI is received and reviewed.</p>
+        </div>
+        <button onclick="closeContractorModal()" style="margin-top:1.5rem;padding:0.75rem 2rem;background:var(--navy);color:var(--cream);border:none;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal open/close
+  function openContractorModal() {
+    document.getElementById('contractor-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContractorModal() {
+    document.getElementById('contractor-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleModalClick(e) {
+    if (e.target === document.getElementById('contractor-modal')) closeContractorModal();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeContractorModal(); });
+
+  // Contractor form submission
+  async function submitContractorForm() {
+    const required = ['c-fname','c-lname','c-company','c-email','c-phone','c-years','c-insurer','c-exp','c-desc'];
+    let valid = true;
+    required.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el || !el.value.trim()) { if (el) el.style.borderColor = '#e05252'; valid = false; }
+      else el.style.borderColor = '';
+    });
+
+    const counties = [...document.querySelectorAll('.c-county:checked')].map(c => c.parentElement.textContent.trim());
+    const trades   = [...document.querySelectorAll('.c-trade:checked')].map(t => t.parentElement.textContent.trim());
+
+    if (counties.length === 0 || trades.length === 0) { valid = false; alert('Please select at least one county and one trade category.'); return; }
+    if (!document.getElementById('c-agree').checked) { valid = false; }
+    if (!valid) { alert('Please fill in all required fields and accept the network agreement.'); return; }
+
+    const btn = document.getElementById('c-submit-btn');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+
+    const name    = document.getElementById('c-fname').value + ' ' + document.getElementById('c-lname').value;
+    const company = document.getElementById('c-company').value;
+    const email   = document.getElementById('c-email').value;
+
+    // Build form data for Web3Forms
+    const formData = new FormData();
+    formData.append('access_key', '277f9b40-6d11-4701-82bb-bdafe63382b5');
+    formData.append('subject', 'New Contractor Application — ' + company);
+    formData.append('from_name', 'TrustBuild Philadelphia');
+    formData.append('name', name);
+    formData.append('company', company);
+    formData.append('email', email);
+    formData.append('phone', document.getElementById('c-phone').value);
+    formData.append('address', document.getElementById('c-address').value);
+    formData.append('years_in_business', document.getElementById('c-years').value);
+    formData.append('counties_served', counties.join(', '));
+    formData.append('trades', trades.join(', '));
+    formData.append('pa_license', document.getElementById('c-pa-license').value);
+    formData.append('nj_license', document.getElementById('c-nj-license').value);
+    formData.append('other_license', document.getElementById('c-other-license').value);
+    formData.append('insurance_carrier', document.getElementById('c-insurer').value);
+    formData.append('policy_number', document.getElementById('c-policy').value);
+    formData.append('coi_expiration', document.getElementById('c-exp').value);
+    formData.append('description', document.getElementById('c-desc').value);
+    formData.append('crew_size', document.getElementById('c-crew').value);
+    formData.append('website', document.getElementById('c-website').value);
+
+    try {
+      await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+    } catch(e) { console.error('Web3Forms error:', e); }
+
+    // Auto-reply to contractor via EmailJS
+    const contractorMsg = `Thank you for applying to the TrustBuild Philadelphia contractor network, ${name}.
+
+Here's what happens next:
+
+1. COI REQUIRED: Please email your current Certificate of Insurance to info@trustbuildphiladelphia.com with the subject line "COI — ${company}". Your application will not be activated until your COI is received and reviewed.
+
+2. HOW IT WORKS: Once your application and COI are on file, we will match incoming project requests to your trade categories and service area and send them to you when there's a fit.
+
+3. WHEN YOU REACH OUT: When contacting any prospect from a TrustBuild match, please identify yourself as reaching out through TrustBuild Philadelphia.
+
+4. IMPORTANT DISCLAIMERS: TrustBuild is not responsible for the accuracy of information submitted by project requesters. We do not guarantee project quality, scope, or payment. We are a connection service only. TrustBuild reserves the right to remove contractors from the network if serious complaints are received or a repeated pattern of poor business practices is identified.
+
+Questions? Reply to this email or contact us at info@trustbuildphiladelphia.com.
+
+— TrustBuild Philadelphia`;
+
+    try {
+      await emailjs.send('service_i1t9l3l', 'template_w8fktmi', {
+        to_name:  name,
+        to_email: email,
+        message:  contractorMsg,
+        subject:  'Your TrustBuild Philadelphia Contractor Application'
+      }, 'cOulELpWZqNxQ8kHy');
+    } catch(e) { console.error('EmailJS error:', e); }
+
+    // Show success
+    document.getElementById('contractor-form').style.display = 'none';
+    document.getElementById('contractor-success').style.display = 'block';
+  }
 </script>
 </body>
 </html>

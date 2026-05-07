@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | TrustBuild Philadelphia — Local Contractor Tips & News</title>
+  <meta name="description" content="TrustBuild Philadelphia's blog covering local contractor tips, home improvement advice, and construction news for the Greater Philadelphia area including Bucks, Montgomery, Delaware, Chester, Camden, Burlington, and Gloucester counties."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:     #1a1008;
+      --steel:    #2c1f0e;
+      --gold:     #c47c2b;
+      --gold-lt:  #e0a44e;
+      --cream:    #f7f0e3;
+      --off-white:#fdf8f0;
+      --smoke:    #e8dece;
+      --text:     #1a1008;
+      --muted:    #7a6a55;
+      --green:    #3a5e3a;
+      --brick:    #8b3a2a;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--off-white); color: var(--text); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      background: var(--navy);
+      border-bottom: 3px solid var(--gold);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--cream); letter-spacing: 0.04em; text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { color: rgba(247,240,227,0.7); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-lt); }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1.2rem; border-radius: 2px; font-weight: 600 !important; letter-spacing: 0.06em; border: 2px solid var(--gold-lt); }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+
+    /* BLOG HERO */
+    .blog-hero {
+      background: var(--navy); padding: 8rem 3rem 4rem;
+      border-bottom: 3px solid var(--gold);
+      position: relative; overflow: hidden;
+    }
+    .blog-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c47c2b' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .blog-hero-label {
+      display: inline-block; color: var(--gold); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; border-bottom: 1px solid var(--gold);
+      padding-bottom: 0.2rem; margin-bottom: 1rem;
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900; color: var(--cream); line-height: 1.15; max-width: 680px;
+    }
+    .blog-hero p { color: rgba(247,240,227,0.6); font-size: 1rem; line-height: 1.7; max-width: 540px; margin-top: 1rem; }
+
+    /* LAYOUT */
+    .blog-layout {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 320px;
+      gap: 3rem; padding: 4rem 3rem;
+    }
+
+    /* POSTS */
+    .posts-list { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .post-card {
+      background: var(--cream); border: 1px solid var(--smoke);
+      border-left: 4px solid var(--gold); border-radius: 2px;
+      padding: 2rem 2rem 1.8rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .post-card:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(26,16,8,0.1); }
+    .post-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.9rem; flex-wrap: wrap; }
+    .post-date { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brick); }
+    .post-category {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      background: rgba(196,124,43,0.12); border: 1px solid rgba(196,124,43,0.3);
+      color: var(--gold); padding: 0.2rem 0.6rem; border-radius: 2px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700;
+      color: var(--navy); line-height: 1.3; margin-bottom: 0.7rem;
+      text-decoration: none; display: block; transition: color 0.2s;
+    }
+    .post-title:hover { color: var(--gold); }
+    .post-excerpt { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+    .post-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--smoke); }
+    .post-read-more {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+    .post-read-more:hover { gap: 0.7rem; }
+    .post-county { font-size: 0.75rem; color: var(--muted); }
+
+    /* FEATURED POST */
+    .post-card.featured { border-left-color: var(--brick); border-left-width: 6px; }
+    .featured-badge { display: inline-block; background: var(--brick); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 0.6rem; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+    .sidebar-widget { background: var(--cream); border: 1px solid var(--smoke); border-top: 3px solid var(--gold); border-radius: 2px; padding: 1.5rem; }
+    .widget-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--smoke); }
+
+    /* Categories widget */
+    .cat-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .cat-list a { font-size: 0.88rem; color: var(--muted); text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid var(--smoke); transition: color 0.2s; }
+    .cat-list a:hover { color: var(--gold); }
+    .cat-count { background: var(--smoke); font-size: 0.72rem; padding: 0.1rem 0.5rem; border-radius: 2px; color: var(--muted); }
+
+    /* Recent posts widget */
+    .recent-list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .recent-item { display: flex; flex-direction: column; gap: 0.15rem; }
+    .recent-item a { font-size: 0.88rem; font-weight: 600; color: var(--navy); text-decoration: none; line-height: 1.4; transition: color 0.2s; }
+    .recent-item a:hover { color: var(--gold); }
+    .recent-date { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+
+    /* CTA widget */
+    .sidebar-cta { background: var(--navy); border: none; border-top: 3px solid var(--gold); padding: 1.5rem; border-radius: 2px; text-align: center; }
+    .sidebar-cta .widget-title { color: var(--cream); border-bottom-color: rgba(196,124,43,0.3); }
+    .sidebar-cta p { font-size: 0.85rem; color: rgba(247,240,227,0.6); line-height: 1.6; margin-bottom: 1rem; }
+    .sidebar-cta a { display: block; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 1rem; border-radius: 2px; text-decoration: none; border: 2px solid var(--gold-lt); box-shadow: 3px 3px 0 rgba(0,0,0,0.3); transition: all 0.2s; }
+    .sidebar-cta a:hover { background: var(--gold-lt); transform: translate(-1px,-1px); box-shadow: 4px 4px 0 rgba(0,0,0,0.3); }
+
+    /* COUNTIES badge */
+    .county-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+    .county-tag { font-size: 0.7rem; background: var(--smoke); color: var(--muted); padding: 0.2rem 0.5rem; border-radius: 2px; }
+
+    /* PAGINATION */
+    .pagination { display: flex; gap: 0.5rem; margin-top: 2rem; align-items: center; }
+    .page-btn { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--smoke); background: var(--cream); color: var(--navy); font-size: 0.85rem; font-weight: 600; cursor: pointer; border-radius: 2px; text-decoration: none; transition: all 0.2s; }
+    .page-btn.active, .page-btn:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+    /* INDIVIDUAL POST PAGE (hidden by default, shown via JS) */
+    .post-full { display: none; max-width: 760px; margin: 0 auto; padding: 4rem 3rem; }
+    .post-full.visible { display: block; }
+    .post-full-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid var(--smoke); }
+    .post-full-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 0.8rem; }
+    .post-full-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted); }
+    .post-full-body { font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+    .post-full-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 2rem 0 0.8rem; }
+    .post-full-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin: 1.5rem 0 0.6rem; }
+    .post-full-body p { margin-bottom: 1.2rem; }
+    .post-full-body ul, .post-full-body ol { margin: 0 0 1.2rem 1.5rem; }
+    .post-full-body li { margin-bottom: 0.5rem; }
+    .post-full-body strong { color: var(--navy); }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold); font-size: 0.85rem; font-weight: 700; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2rem; transition: gap 0.2s; cursor: pointer; }
+    .back-link:hover { gap: 0.7rem; }
+
+    /* SEO FOOTER NOTE */
+    .seo-counties { background: var(--cream); border-top: 2px solid var(--smoke); padding: 2rem 3rem; text-align: center; font-size: 0.8rem; color: var(--muted); line-height: 1.8; }
+
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 2.5rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--cream); }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy { color: rgba(247,240,227,0.3); font-size: 0.77rem; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(247,240,227,0.48); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-lt); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .blog-layout { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+      .blog-hero { padding: 6rem 1.5rem 3rem; }
+      .post-full { padding: 2.5rem 1.5rem; }
+      footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+      .seo-counties { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Trust<span>Build</span> Philadelphia</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="index.html#who-we-serve">Who We Serve</a>
+    <a href="index.html#categories">Services</a>
+    <a href="index.html#submit-project" class="nav-cta">Request a Proposal</a>
+  </div>
+</nav>
+
+<!-- BLOG HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-label">✦ The TrustBuild Journal</div>
+  <h1>Contractor Tips, Local Insights &amp; Home Improvement Advice</h1>
+  <p>Practical guidance for homeowners, business owners, and contractors across Philadelphia, Bucks, Montgomery, Delaware, Chester, Camden, Burlington &amp; Gloucester counties.</p>
+</div>
+
+<!-- BLOG LIST VIEW -->
+<div id="blog-list">
+  <div class="blog-layout">
+    <main class="posts-list">
+
+      <!-- ══════════════════════════════════════════
+           TO ADD A NEW POST:
+           1. Copy one <article class="post-card"> block below
+           2. Update: post-date, post-category, post-title, post-excerpt, post-county
+           3. Add a matching full post in the #blog-posts section below
+           4. Connect them with matching onclick="showPost('post-id')" and id="post-id"
+      ══════════════════════════════════════════ -->
+
+      <!-- FEATURED POST -->
+      <article class="post-card featured">
+        <div class="featured-badge">⭐ Featured</div>
+        <div class="post-meta">
+          <span class="post-date">May 6, 2025</span>
+          <span class="post-category">Home Tips</span>
+        </div>
+        <a class="post-title" onclick="showPost('post-1')" href="#">5 Questions to Ask Every Contractor Before Hiring in Philadelphia</a>
+        <p class="post-excerpt">Before you let anyone into your home with a tool belt, there are five non-negotiable questions you should ask. From insurance verification to permit knowledge, here's what separates a reliable contractor from a headache waiting to happen.</p>
+        <div class="post-footer">
+          <a class="post-read-more" onclick="showPost('post-1')" href="#">Read More →</a>
+          <span class="post-county">📍 Greater Philadelphia</span>
+        </div>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-date">May 5, 2025</span>
+          <span class="post-category">Landscaping</span>
+        </div>
+        <a class="post-title" onclick="showPost('post-2')" href="#">Spring Landscaping in Bucks County: What to Prioritize First</a>
+        <p class="post-excerpt">Spring is the busiest season for landscaping contractors across Bucks County. If you're looking to get your yard in shape, here's how to prioritize the work — and when to book — to get the best results.</p>
+        <div class="post-footer">
+          <a class="post-read-more" onclick="showPost('post-2')" href="#">Read More →</a>
+          <span class="post-county">📍 Bucks County, PA</span>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-date">May 4, 2025</span>
+          <span class="post-category">Roofing</span>
+        </div>
+        <a class="post-title" onclick="showPost('post-3')" href="#">How to Tell If Your Roof Needs Repair or Full Replacement</a>
+        <p class="post-excerpt">Homeowners across Montgomery County often ask whether a few missing shingles means patch job or full tear-off. The answer depends on several factors — here's how to assess your situation before calling a roofer.</p>
+        <div class="post-footer">
+          <a class="post-read-more" onclick="showPost('post-3')" href="#">Read More →</a>
+          <span class="post-county">📍 Montgomery County, PA</span>
+        </div>
+      </article>
+
+      <!-- POST 4 -->
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-date">May 3, 2025</span>
+          <span class="post-category">Commercial</span>
+        </div>
+        <a class="post-title" onclick="showPost('post-4')" href="#">What Camden County Business Owners Should Know Before Starting a Build-Out</a>
+        <p class="post-excerpt">Planning a commercial tenant improvement in Camden County? From permits to contractor requirements, there are several things business owners get wrong the first time. Here's what to know before you break ground.</p>
+        <div class="post-footer">
+          <a class="post-read-more" onclick="showPost('post-4')" href="#">Read More →</a>
+          <span class="post-county">📍 Camden County, NJ</span>
+        </div>
+      </article>
+
+      <!-- POST 5 -->
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-date">May 2, 2025</span>
+          <span class="post-category">Insurance</span>
+        </div>
+        <a class="post-title" onclick="showPost('post-5')" href="#">Why a Certificate of Insurance Actually Matters — And How to Read One</a>
+        <p class="post-excerpt">Most homeowners accept a contractor's word that they're insured. But knowing how to read a COI could save you from serious financial and legal exposure. Here's a plain-English breakdown.</p>
+        <div class="post-footer">
+          <a class="post-read-more" onclick="showPost('post-5')" href="#">Read More →</a>
+          <span class="post-county">📍 Greater Philadelphia</span>
+        </div>
+      </article>
+
+      <div class="pagination">
+        <a href="#" class="page-btn active">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+        <a href="#" class="page-btn">→</a>
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-cta">
+        <div class="widget-title">Need a Contractor?</div>
+        <p>Submit your project details and let qualified, insured contractors in our network reach out to you.</p>
+        <a href="index.html#submit-project">Request a Proposal →</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Categories</div>
+        <div class="cat-list">
+          <a href="#">Home Tips <span class="cat-count">12</span></a>
+          <a href="#">Roofing <span class="cat-count">8</span></a>
+          <a href="#">Landscaping <span class="cat-count">7</span></a>
+          <a href="#">Commercial <span class="cat-count">6</span></a>
+          <a href="#">HVAC <span class="cat-count">5</span></a>
+          <a href="#">Plumbing <span class="cat-count">4</span></a>
+          <a href="#">Insurance &amp; Legal <span class="cat-count">4</span></a>
+          <a href="#">Paving <span class="cat-count">3</span></a>
+          <a href="#">Remodeling <span class="cat-count">9</span></a>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Recent Posts</div>
+        <div class="recent-list">
+          <div class="recent-item"><a onclick="showPost('post-1')" href="#">5 Questions to Ask Every Contractor Before Hiring</a><span class="recent-date">May 6, 2025</span></div>
+          <div class="recent-item"><a onclick="showPost('post-2')" href="#">Spring Landscaping in Bucks County</a><span class="recent-date">May 5, 2025</span></div>
+          <div class="recent-item"><a onclick="showPost('post-3')" href="#">Roof Repair vs. Replacement</a><span class="recent-date">May 4, 2025</span></div>
+          <div class="recent-item"><a onclick="showPost('post-4')" href="#">Camden County Commercial Build-Out Tips</a><span class="recent-date">May 3, 2025</span></div>
+          <div class="recent-item"><a onclick="showPost('post-5')" href="#">How to Read a Certificate of Insurance</a><span class="recent-date">May 2, 2025</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">We Serve</div>
+        <div class="county-tags">
+          <span class="county-tag">Philadelphia, PA</span>
+          <span class="county-tag">Bucks, PA</span>
+          <span class="county-tag">Montgomery, PA</span>
+          <span class="county-tag">Delaware, PA</span>
+          <span class="county-tag">Chester, PA</span>
+          <span class="county-tag">Camden, NJ</span>
+          <span class="county-tag">Burlington, NJ</span>
+          <span class="county-tag">Gloucester, NJ</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     FULL POST PAGES
+     To add a new full post: copy one .post-full block,
+     give it a unique id, update all content inside.
+══════════════════════════════════════════ -->
+<div id="blog-posts">
+
+  <!-- POST 1 FULL -->
+  <div class="post-full" id="post-1">
+    <a class="back-link" onclick="showList()">← Back to Blog</a>
+    <div class="post-full-header">
+      <div class="post-meta" style="margin-bottom:0.8rem;">
+        <span class="post-date">May 6, 2025</span>
+        <span class="post-category">Home Tips</span>
+        <span class="post-county" style="font-size:0.78rem;color:#7a6a55;">📍 Greater Philadelphia</span>
+      </div>
+      <h1 class="post-full-title">5 Questions to Ask Every Contractor Before Hiring in Philadelphia</h1>
+    </div>
+    <div class="post-full-body">
+      <p>Hiring a contractor in the Greater Philadelphia area — whether you're in Chestnut Hill, Cherry Hill, or anywhere in between — can feel like a gamble. But it doesn't have to be. Asking the right questions upfront separates the professionals from the problems.</p>
+
+      <h2>1. Can I See Your Certificate of Insurance?</h2>
+      <p>This is non-negotiable. Any legitimate contractor should be able to produce a current Certificate of Insurance (COI) showing general liability coverage and workers' compensation. Don't just ask if they have it — ask to see it. Check that it's current, and that the coverage limits are reasonable for the scope of your project.</p>
+      <p>If a contractor hesitates or can't produce a COI, walk away. Hiring an uninsured contractor in Pennsylvania or New Jersey could leave you personally liable if a worker is injured on your property.</p>
+
+      <h2>2. Are You Licensed for This Type of Work?</h2>
+      <p>Pennsylvania and New Jersey have different licensing requirements by trade. Electricians, plumbers, and HVAC contractors typically require state licensing. General contractors may need a Home Improvement Contractor (HIC) registration in PA. Ask specifically — don't assume.</p>
+
+      <h2>3. Will You Pull the Permits?</h2>
+      <p>Any significant structural, electrical, plumbing, or HVAC work in Philadelphia, Bucks, Montgomery, Delaware, Chester, Camden, Burlington, or Gloucester County will likely require a permit. A reputable contractor will handle this — and should include it in their estimate. Be wary of anyone who suggests skipping permits to "save money."</p>
+
+      <h2>4. Can You Provide References From Local Projects?</h2>
+      <p>References from past clients in your area are gold. A contractor with a track record in Montgomery County or South Jersey will understand local code, supplier relationships, and permit processes specific to those municipalities. Ask for at least two or three recent references and actually call them.</p>
+
+      <h2>5. What Does Your Payment Schedule Look Like?</h2>
+      <p>Legitimate contractors typically ask for a deposit (usually 10–30%), then progress payments tied to milestones, with a final payment held until completion. Be cautious of anyone asking for more than 50% upfront, or demanding cash only.</p>
+
+      <p>At TrustBuild Philadelphia, every contractor in our network has submitted a Certificate of Insurance before being listed. While we encourage you to verify all credentials directly, our vetting process gives you a better starting point than searching blind. <a href="index.html#submit-project" style="color:var(--gold);font-weight:600;">Submit a proposal request</a> and let qualified contractors reach out to you.</p>
+    </div>
+  </div>
+
+  <!-- POST 2 FULL -->
+  <div class="post-full" id="post-2">
+    <a class="back-link" onclick="showList()">← Back to Blog</a>
+    <div class="post-full-header">
+      <div class="post-meta" style="margin-bottom:0.8rem;">
+        <span class="post-date">May 5, 2025</span>
+        <span class="post-category">Landscaping</span>
+        <span class="post-county" style="font-size:0.78rem;color:#7a6a55;">📍 Bucks County, PA</span>
+      </div>
+      <h1 class="post-full-title">Spring Landscaping in Bucks County: What to Prioritize First</h1>
+    </div>
+    <div class="post-full-body">
+      <p>Spring arrives fast in Bucks County, and so does the backlog for reputable landscaping contractors. If you're hoping to get your yard, garden, or commercial property looking its best before summer, knowing what to tackle first — and when to book — makes all the difference.</p>
+
+      <h2>Start With Cleanup and Assessment</h2>
+      <p>Before any planting or hardscaping begins, a thorough spring cleanup is essential. This means clearing winter debris, cutting back dead perennials, raking matted leaves from lawn areas, and inspecting irrigation systems for freeze damage. Skipping cleanup and going straight to planting is a mistake many homeowners make.</p>
+
+      <h2>Lawn Care Timing Is Everything</h2>
+      <p>In Bucks County's climate, the optimal window for overseeding cool-season grasses is early spring — typically late March through April. Crabgrass preventer applications need to go down before soil temps hit 55°F. Book your lawn care contractor early; quality landscapers in Doylestown, Newtown, and Langhorne fill their schedules fast.</p>
+
+      <h2>Hardscaping Projects: Book Now, Install Later</h2>
+      <p>If you're thinking about a patio, retaining wall, or driveway project, spring is the time to get on a contractor's schedule — even if installation won't happen until May or June. Hardscaping contractors in Bucks County are typically booked 6–10 weeks out by April.</p>
+
+      <h2>Tree Service: Don't Wait Until There's a Problem</h2>
+      <p>Spring is an ideal time to have trees assessed for storm damage, disease, or structural issues before summer storms arrive. A certified arborist can identify problems early — when they're far cheaper to address.</p>
+
+      <p>Looking for a landscaping or lawn care contractor in Bucks County? <a href="index.html#submit-project" style="color:var(--gold);font-weight:600;">Submit a proposal request on TrustBuild</a> and let local professionals reach out to you.</p>
+    </div>
+  </div>
+
+  <!-- POST 3 FULL -->
+  <div class="post-full" id="post-3">
+    <a class="back-link" onclick="showList()">← Back to Blog</a>
+    <div class="post-full-header">
+      <div class="post-meta" style="margin-bottom:0.8rem;">
+        <span class="post-date">May 4, 2025</span>
+        <span class="post-category">Roofing</span>
+        <span class="post-county" style="font-size:0.78rem;color:#7a6a55;">📍 Montgomery County, PA</span>
+      </div>
+      <h1 class="post-full-title">How to Tell If Your Roof Needs Repair or Full Replacement</h1>
+    </div>
+    <div class="post-full-body">
+      <p>It's one of the most common questions homeowners in Montgomery County ask after a rough winter: do I need a patch or a whole new roof? The answer depends on the age of your roof, the extent of the damage, and your long-term plans for the property.</p>
+
+      <h2>Signs You Can Get Away With a Repair</h2>
+      <ul>
+        <li>Damage is isolated to a small area (less than 30% of the roof surface)</li>
+        <li>Your roof is less than 15 years old and otherwise in good condition</li>
+        <li>Missing or damaged shingles are from a single storm event, not ongoing wear</li>
+        <li>No signs of deck rot or structural damage underneath</li>
+      </ul>
+
+      <h2>Signs You Need a Full Replacement</h2>
+      <ul>
+        <li>Your asphalt shingles are 20+ years old</li>
+        <li>Granules are accumulating in your gutters (shingles losing their coating)</li>
+        <li>Multiple areas of the roof are damaged or deteriorating</li>
+        <li>You're seeing daylight through the roof boards in your attic</li>
+        <li>Interior water damage in multiple locations after rain</li>
+      </ul>
+
+      <h2>What Roofing Contractors in Montgomery County Will Look For</h2>
+      <p>A reputable roofer will inspect not just the shingles but the flashing around chimneys and vents, the condition of the underlayment, the fascia and soffit, and the attic ventilation. Poor ventilation is one of the most overlooked causes of premature roof failure in the Philadelphia suburbs.</p>
+
+      <p>Get multiple quotes before committing — and make sure any roofer you hire carries proper insurance and pulls a permit where required. Ready to connect with a local roofer? <a href="index.html#submit-project" style="color:var(--gold);font-weight:600;">Request a proposal on TrustBuild Philadelphia.</a></p>
+    </div>
+  </div>
+
+  <!-- POST 4 FULL -->
+  <div class="post-full" id="post-4">
+    <a class="back-link" onclick="showList()">← Back to Blog</a>
+    <div class="post-full-header">
+      <div class="post-meta" style="margin-bottom:0.8rem;">
+        <span class="post-date">May 3, 2025</span>
+        <span class="post-category">Commercial</span>
+        <span class="post-county" style="font-size:0.78rem;color:#7a6a55;">📍 Camden County, NJ</span>
+      </div>
+      <h1 class="post-full-title">What Camden County Business Owners Should Know Before Starting a Build-Out</h1>
+    </div>
+    <div class="post-full-body">
+      <p>Commercial tenant improvements in Camden County, New Jersey come with their own set of rules, timelines, and common pitfalls. Whether you're opening a retail location in Cherry Hill or converting warehouse space in Gloucester City, here's what to have in order before your contractor shows up.</p>
+
+      <h2>Permits Take Longer Than You Think</h2>
+      <p>Commercial permits in Camden County municipalities can take anywhere from 2 to 8 weeks depending on the scope of work and the municipality. Factor this into your timeline — many business owners assume work starts the day they sign a contractor agreement. It doesn't. Plan for the permit process before you sign a lease with a hard open date.</p>
+
+      <h2>Your Contractor Must Be Licensed in New Jersey</h2>
+      <p>New Jersey requires contractors performing commercial work to hold a valid NJ Home Improvement Contractor license and carry the appropriate liability and workers' comp coverage. Always verify — don't assume a contractor licensed in Pennsylvania is automatically licensed in NJ.</p>
+
+      <h2>Require a COI Before Anyone Steps on Site</h2>
+      <p>Ask for a Certificate of Insurance that names your business as an additional insured for the duration of the project. Your landlord will likely require this as well. Keep a copy on file.</p>
+
+      <h2>Build in a Contingency Budget</h2>
+      <p>Commercial build-outs routinely run 10–20% over initial estimates due to unforeseen conditions — old wiring, code-required upgrades, or supply chain delays. Build this into your budget from day one rather than scrambling mid-project.</p>
+
+      <p>TrustBuild Philadelphia's network includes commercial contractors serving Camden, Burlington, and Gloucester counties in New Jersey. <a href="index.html#submit-project" style="color:var(--gold);font-weight:600;">Submit your project details</a> and connect with experienced commercial contractors.</p>
+    </div>
+  </div>
+
+  <!-- POST 5 FULL -->
+  <div class="post-full" id="post-5">
+    <a class="back-link" onclick="showList()">← Back to Blog</a>
+    <div class="post-full-header">
+      <div class="post-meta" style="margin-bottom:0.8rem;">
+        <span class="post-date">May 2, 2025</span>
+        <span class="post-category">Insurance</span>
+        <span class="post-county" style="font-size:0.78rem;color:#7a6a55;">📍 Greater Philadelphia</span>
+      </div>
+      <h1 class="post-full-title">Why a Certificate of Insurance Actually Matters — And How to Read One</h1>
+    </div>
+    <div class="post-full-body">
+      <p>Most homeowners nod along when a contractor says "I'm fully insured." But very few actually know what that means, what to look for, or what happens when a contractor's coverage lapses mid-project. Here's a plain-English guide.</p>
+
+      <h2>What Is a Certificate of Insurance?</h2>
+      <p>A Certificate of Insurance (COI) is a one-page summary document issued by an insurance company that confirms a contractor holds active coverage. It lists the types and limits of coverage, the policy effective and expiration dates, and the name of the insured.</p>
+
+      <h2>What to Look For</h2>
+      <ul>
+        <li><strong>General Liability:</strong> Covers property damage or injuries to third parties. For residential work, $1M per occurrence is a reasonable minimum.</li>
+        <li><strong>Workers' Compensation:</strong> Covers medical costs if a worker is injured on your property. Without this, you could be liable.</li>
+        <li><strong>Policy Expiration Date:</strong> Make sure coverage doesn't expire before your project is complete.</li>
+        <li><strong>Named Insured:</strong> Should match the company name on the contract you're signing.</li>
+      </ul>
+
+      <h2>What a COI Doesn't Guarantee</h2>
+      <p>A COI is a snapshot in time. Coverage can lapse or be cancelled after the document is issued. For long projects, ask to be listed as an additional insured and request a copy of the declarations page directly from the insurer if you have concerns.</p>
+
+      <h2>TrustBuild's Approach</h2>
+      <p>Every contractor in the TrustBuild Philadelphia network has submitted a current COI as part of their enrollment. We review what is submitted, but we do not independently verify ongoing coverage. We always encourage homeowners and business owners to do their own verification before work begins.</p>
+
+      <p>Have a contractor project coming up? <a href="index.html#submit-project" style="color:var(--gold);font-weight:600;">Request a proposal through TrustBuild Philadelphia</a> and connect with contractors who take insurance seriously.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- SEO FOOTER NOTE -->
+<div class="seo-counties">
+  TrustBuild Philadelphia connects homeowners, business owners, and general contractors with skilled trade contractors across <strong>Philadelphia County, Bucks County, Montgomery County, Delaware County, and Chester County in Pennsylvania</strong>, as well as <strong>Camden County, Burlington County, and Gloucester County in New Jersey</strong>. Services include roofing, landscaping, paving, electrical, plumbing, HVAC, kitchen and bathroom remodeling, commercial build-outs, masonry, flooring, painting, and more.
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Trust<span>Build</span> Philadelphia</div>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#who-we-serve">Who We Serve</a>
+    <a href="index.html#submit-project">Request a Proposal</a>
+  </div>
+  <div class="footer-copy">© 2025 TrustBuild Philadelphia. All rights reserved.</div>
+</footer>
+
+<script>
+  function showPost(id) {
+    document.getElementById('blog-list').style.display = 'none';
+    document.querySelectorAll('.post-full').forEach(p => p.classList.remove('visible'));
+    document.getElementById(id).classList.add('visible');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function showList() {
+    document.querySelectorAll('.post-full').forEach(p => p.classList.remove('visible'));
+    document.getElementById('blog-list').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
