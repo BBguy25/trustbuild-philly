@@ -427,6 +427,7 @@
     <a href="#who-we-serve">Who We Serve</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#categories">Services</a>
+    <a href="blog.html">Blog</a>
     <a href="#" onclick="openContractorModal();return false;" class="nav-contractor">Join as Contractor</a>
     <a href="#submit-project" class="nav-cta">Request a Proposal</a>
   </div>
@@ -1197,7 +1198,6 @@
     } catch(e) { console.error('Web3Forms error:', e); }
 
     // ── 2. Send auto-reply to submitter via EmailJS ──
-    // ⬇ Replace YOUR_EMAILJS_SERVICE_ID, YOUR_EMAILJS_TEMPLATE_SUBMITTER_ID, YOUR_EMAILJS_PUBLIC_KEY
     const isContractorForm = isGC;
     const submitterMsg = isContractorForm
       ? `Thank you for joining the TrustBuild Philadelphia network. Here's what you should know:\n\n` +
@@ -1223,7 +1223,7 @@
       }, 'cOulELpWZqNxQ8kHy');
     } catch(e) { console.error('EmailJS error:', e); }
 
-    // ── 3. Show success state ──
+    // ── 3. Always show success state regardless of EmailJS result ──
     document.getElementById('project-form').style.display = 'none';
     const msg = document.getElementById('success-msg');
     msg.style.display = 'block';
