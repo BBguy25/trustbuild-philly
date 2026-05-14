@@ -444,7 +444,7 @@
 <section class="hero">
   <div class="hero-eyebrow">Insurance Verified · Greater Philadelphia Region</div>
   <h1>The <em>Trusted</em> Network<br>for Requesting Skilled Contractors</h1>
-  <p class="hero-sub">Homeowners protecting their investment. Business owners managing commercial spaces. GCs building their sub roster. TrustBuild connects you with insured, vetted trade contractors across the Greater Philadelphia area.</p>
+  <p class="hero-sub">Homeowners protecting their investment, business owners managing commercial spaces, and general contractors building reliable subcontractor rosters — we're building a network of trusted contractors across all trades throughout the Philadelphia region, focused on connecting people with dependable professionals that best fit their needs. Give us a try — it's free.</p>
 
   <div class="audience-tabs">
     <button class="aud-tab active" onclick="setAudience(this,'homeowner')">🏠 Homeowners</button>
@@ -599,6 +599,26 @@
     <div class="cat-pill"><span class="cat-icon">🔩</span> Steel &amp; Fabrication</div>
     <div class="cat-pill"><span class="cat-icon">🏚️</span> Demolition</div>
     <div class="cat-pill"><span class="cat-icon">🧹</span> Commercial Cleaning</div>
+    <div class="cat-pill"><span class="cat-icon">🔥</span> Boiler Installation</div>
+    <div class="cat-pill"><span class="cat-icon">💦</span> Sprinkler Systems</div>
+    <div class="cat-pill"><span class="cat-icon">🔐</span> Security System Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🚜</span> Excavating</div>
+    <div class="cat-pill"><span class="cat-icon">⛰️</span> Land Grading &amp; Leveling</div>
+    <div class="cat-pill"><span class="cat-icon">🏠</span> Siding &amp; Cladding</div>
+    <div class="cat-pill"><span class="cat-icon">🔆</span> Solar Panel Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🧲</span> Generator Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🪜</span> Insulation</div>
+    <div class="cat-pill"><span class="cat-icon">🚧</span> Retaining Walls</div>
+    <div class="cat-pill"><span class="cat-icon">🌊</span> Drainage &amp; Grading</div>
+    <div class="cat-pill"><span class="cat-icon">🏗️</span> Structural Engineering</div>
+    <div class="cat-pill"><span class="cat-icon">📡</span> Low Voltage &amp; Data Wiring</div>
+    <div class="cat-pill"><span class="cat-icon">🚿</span> Water Heater Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🏠</span> Garage Door Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🛤️</span> Fence &amp; Gate Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🌡️</span> Radiant Heat Installation</div>
+    <div class="cat-pill"><span class="cat-icon">🔭</span> Chimney &amp; Fireplace</div>
+    <div class="cat-pill"><span class="cat-icon">🏊</span> Pool &amp; Spa Installation</div>
+    <div class="cat-pill"><span class="cat-icon">📦</span> Moving &amp; Hauling</div>
   </div>
 </section>
 
@@ -612,7 +632,7 @@
       <div class="form-perks">
         <div class="form-perk"><div class="perk-check">✓</div><span>Free to submit — no fees or subscriptions</span></div>
         <div class="form-perk"><div class="perk-check">✓</div><span>COI reviewed prior to submissions being sent to contractors</span></div>
-        <div class="form-perk"><div class="perk-check">✓</div><span>Your contact info stays private until you choose to engage</span></div>
+        <div class="form-perk"><div class="perk-check">✓</div><span>Your contact information will remain private until a contractor has reviewed the project details and determined they would like to reach out</span></div>
         <div class="form-perk"><div class="perk-check">✓</div><span>Typical first response within 48 hours</span></div>
         <div class="form-perk"><div class="perk-check">✓</div><span>Serving 8 counties — PA: Philadelphia, Bucks, Montgomery, Delaware &amp; Chester · NJ: Camden, Burlington &amp; Gloucester</span></div>
       </div>
@@ -979,12 +999,6 @@
           <textarea id="notes" rows="3" placeholder="Anything else contractors should know — parking situation, access hours, materials already purchased, HOA restrictions, job site rules, etc."></textarea>
         </div>
 
-        <div class="field-group">
-          <label>Attachments <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(optional — plans, photos, specs)</span></label>
-          <input type="file" id="attachments" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.dwg" style="padding:0.5rem;font-size:0.85rem;cursor:pointer;"/>
-          <p class="field-tip">Accepted: PDF, JPG, PNG, DOC, DOCX, DWG. Max 10MB per file.</p>
-        </div>
-
         <div style="background:rgba(201,147,58,0.08);border:1px solid rgba(201,147,58,0.25);border-radius:8px;padding:1rem 1.1rem;margin:1.2rem 0;font-size:0.82rem;color:var(--muted);line-height:1.65;">
           <strong style="color:var(--navy);display:block;margin-bottom:0.4rem;">⚠️ Please Read Before Submitting</strong>
           TrustBuild Philadelphia is a <strong>connection service only</strong>. We do not employ contractors, guarantee their work, verify ongoing insurance status, or assume any liability for work performed. Contractors in our network have submitted a Certificate of Insurance at the time of enrollment, but we do not independently confirm coverage remains active. Always verify insurance and licenses directly before hiring any contractor.
@@ -1052,6 +1066,11 @@
     </div>
   </div>
 </section>
+
+<!-- FEEDBACK BAR -->
+<div style="background:var(--steel);border-top:2px solid rgba(196,124,43,0.3);border-bottom:2px solid rgba(196,124,43,0.3);padding:1.2rem 3rem;text-align:center;font-size:0.85rem;color:rgba(247,240,227,0.7);line-height:1.7;">
+  We're always seeking feedback on how we can better connect our contractors with prospective clients. Please feel free to reach out with feedback and questions at <a href="mailto:info@trustbuildphiladelphia.com" style="color:var(--gold-lt);font-weight:600;">info@trustbuildphiladelphia.com</a>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -1191,9 +1210,6 @@
     formData.append('estimated_duration', document.getElementById('duration').value);
     formData.append('budget_range', document.getElementById('budget').value);
     formData.append('quotes_desired', document.getElementById('bids').value);
-
-    const files = document.getElementById('attachments').files;
-    for (let i = 0; i < files.length; i++) { formData.append('attachment_' + i, files[i]); }
 
     let web3ok = false;
     try {
